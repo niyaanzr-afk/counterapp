@@ -11,8 +11,10 @@ class CountController extends ChangeNotifier {
   }
 
   void decrement() {
-    _count.count--;
-    notifyListeners();
+    if (_count.count > 0) {
+      _count.count--;
+      notifyListeners();
+    }
   }
 
   void reset() {
